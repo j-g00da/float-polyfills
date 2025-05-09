@@ -1,7 +1,14 @@
 [package]
 name = "float-polyfills"
+description = "Drop-in no_std-compatible polyfills for various f32 and f64 methods."
 version = "0.1.0"
 edition = "2021"
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+homepage = "https://github.com/j-g00da/float-polyfills"
+repository = "https://github.com/j-g00da/float-polyfills"
+keywords = ["no-std", "polyfill", "float", "math"]
+categories = ["no-std", "no-std::no-alloc"]
 
 [dependencies]
 libm = "0.2.15"

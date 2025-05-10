@@ -17,6 +17,7 @@
 //! - powf
 //! - powi
 //! - round
+//! - round_ties_even
 //! - sin
 //! - sin_cos
 //! - sqrt

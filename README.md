@@ -19,6 +19,7 @@ A Rust crate providing drop-in `no_std`-compatible polyfills for various `f32` a
 - powf
 - powi
 - round
+- round_ties_even
 - sin
 - sin_cos
 - sqrt

@@ -3,13 +3,11 @@
 A Rust crate providing drop-in `no_std`-compatible polyfills for various `f32` and `f64` methods.
 
 ## Supported methods
-- abs
 - acos
 - asin
 - atan
 - atan2
 - ceil
-- copysign
 - cos
 - exp
 - floor
@@ -20,7 +18,6 @@ A Rust crate providing drop-in `no_std`-compatible polyfills for various `f32` a
 - mul_add
 - powf
 - powi
-- recip
 - round
 - sin
 - sin_cos

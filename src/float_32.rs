@@ -1,8 +1,5 @@
 /// Polyfills for various `std`-only `f32` methods.
 pub trait F32Polyfill: Sized {
-    /// Returns absolute value of `self`.
-    fn abs(self) -> f32;
-
     /// Returns arc cosine of `self`.
     fn acos(self) -> f32;
 
@@ -17,9 +14,6 @@ pub trait F32Polyfill: Sized {
 
     /// Returns the smallest integer greater than or equal to `self`.
     fn ceil(self) -> f32;
-
-    /// Returns a number with magnitude of `self` and sign of `sign`.
-    fn copysign(self, sign: f32) -> f32;
 
     /// Returns cosine of `self`.
     fn cos(self) -> f32;
@@ -53,9 +47,6 @@ pub trait F32Polyfill: Sized {
     /// Returns `(self)^n`.
     fn powi(self, n: i32) -> f32;
 
-    /// Returns `1/(self)`.
-    fn recip(self) -> f32;
-
     /// Returns the nearest integer to `self`.
     /// If a value is half-way between two integers, round away from `0.0`.
     fn round(self) -> f32;
@@ -79,9 +70,6 @@ pub trait F32Polyfill: Sized {
 
 
 impl F32Polyfill for f32 {
-    fn abs(self) -> f32 {
-        libm::fabsf(self)
-    }
 
     fn acos(self) -> f32 {
         libm::acosf(self)
@@ -101,10 +89,6 @@ impl F32Polyfill for f32 {
 
     fn ceil(self) -> f32 {
         libm::ceilf(self)
-    }
-
-    fn copysign(self, sign: f32) -> f32 {
-        libm::copysignf(self, sign)
     }
 
     fn cos(self) -> f32 {
@@ -145,10 +129,6 @@ impl F32Polyfill for f32 {
 
     fn powi(self, n: i32) -> f32 {
         libm::powf(self, n as f32)
-    }
-
-    fn recip(self) -> f32 {
-        1.0/self
     }
 
     fn round(self) -> f32 {

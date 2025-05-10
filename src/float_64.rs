@@ -1,8 +1,5 @@
 /// Polyfills for various `std`-only `f64` methods.
 pub trait F64Polyfill: Sized {
-    /// Returns absolute value of `self`.
-    fn abs(self) -> f64;
-
     /// Returns arc cosine of `self`.
     fn acos(self) -> f64;
 
@@ -17,9 +14,6 @@ pub trait F64Polyfill: Sized {
 
     /// Returns the smallest integer greater than or equal to `self`.
     fn ceil(self) -> f64;
-
-    /// Returns a number with magnitude of `self` and sign of `sign`.
-    fn copysign(self, sign: f64) -> f64;
 
     /// Returns cosine of `self`.
     fn cos(self) -> f64;
@@ -53,9 +47,6 @@ pub trait F64Polyfill: Sized {
     /// Returns `(self)^n`.
     fn powi(self, n: i64) -> f64;
 
-    /// Returns `1/(self)`.
-    fn recip(self) -> f64;
-
     /// Returns the nearest integer to `self`.
     /// If a value is half-way between two integers, round away from `0.0`.
     fn round(self) -> f64;
@@ -79,9 +70,6 @@ pub trait F64Polyfill: Sized {
 
 
 impl F64Polyfill for f64 {
-    fn abs(self) -> f64 {
-        libm::fabs(self)
-    }
 
     fn acos(self) -> f64 {
         libm::acos(self)
@@ -101,10 +89,6 @@ impl F64Polyfill for f64 {
 
     fn ceil(self) -> f64 {
         libm::ceil(self)
-    }
-
-    fn copysign(self, sign: f64) -> f64 {
-        libm::copysign(self, sign)
     }
 
     fn cos(self) -> f64 {
@@ -145,10 +129,6 @@ impl F64Polyfill for f64 {
 
     fn powi(self, n: i64) -> f64 {
         libm::pow(self, n as f64)
-    }
-
-    fn recip(self) -> f64 {
-        1.0/self
     }
 
     fn round(self) -> f64 {

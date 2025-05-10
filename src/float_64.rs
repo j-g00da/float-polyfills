@@ -53,7 +53,7 @@ pub trait F64Polyfill: Sized {
     
     /// Returns the nearest integer to a number.
     /// Rounds half-way cases to the number with an even least significant digit.
-    fn round_ties_even(self) -> f32;
+    fn round_ties_even(self) -> f64;
 
     /// Returns sine of `self`.
     fn sin(self) -> f64;

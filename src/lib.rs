@@ -1,13 +1,11 @@
 #![no_std]
 //! Drop-in `no_std`-compatible polyfills for various `f32` and `f64` methods.
 //! Supports:
-//! - abs
 //! - acos
 //! - asin
 //! - atan
 //! - atan2
 //! - ceil
-//! - copysign
 //! - cos
 //! - exp
 //! - floor
@@ -18,7 +16,6 @@
 //! - mul_add
 //! - powf
 //! - powi
-//! - recip
 //! - round
 //! - sin
 //! - sin_cos

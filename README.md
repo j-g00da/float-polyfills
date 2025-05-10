@@ -25,6 +25,7 @@ A Rust crate providing drop-in `no_std`-compatible polyfills for various `f32` a
 - sqrt
 - tan
 - trunc
+- fract
 
 ## Usage
 

@@ -70,6 +70,9 @@ pub trait F64Polyfill: Sized {
     /// Returns the integer part of `self`.
     /// This means that non-integer numbers are always truncated towards zero.
     fn trunc(self) -> f64;
+    
+    /// Returns the fractional part of `self`.
+    fn fract(self) -> f64;
 }
 
 
@@ -161,5 +164,9 @@ impl F64Polyfill for f64 {
 
     fn trunc(self) -> f64 {
         libm::trunc(self)
+    }
+    
+    fn fract(self) -> f64 {
+        self - self.trunc()
     }
 }

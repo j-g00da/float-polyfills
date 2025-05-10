@@ -50,7 +50,7 @@ pub trait F32Polyfill: Sized {
     /// Returns the nearest integer to `self`.
     /// If a value is half-way between two integers, round away from `0.0`.
     fn round(self) -> f32;
-    
+
     /// Returns the nearest integer to a number.
     /// Rounds half-way cases to the number with an even least significant digit.
     fn round_ties_even(self) -> f32;
@@ -70,6 +70,9 @@ pub trait F32Polyfill: Sized {
     /// Returns the integer part of `self`.
     /// This means that non-integer numbers are always truncated towards zero.
     fn trunc(self) -> f32;
+
+    /// Returns the fractional part of `self`.
+    fn fract(self) -> f32;
 }
 
 
@@ -138,7 +141,7 @@ impl F32Polyfill for f32 {
     fn round(self) -> f32 {
         libm::roundf(self)
     }
-    
+
     fn round_ties_even(self) -> f32 {
         libm::roundevenf(self)
     }
@@ -161,5 +164,9 @@ impl F32Polyfill for f32 {
 
     fn trunc(self) -> f32 {
         libm::truncf(self)
+    }
+    
+    fn fract(self) -> f32 {
+        self - self.trunc()
     }
 }

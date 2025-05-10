@@ -23,6 +23,7 @@
 //! - sqrt
 //! - tan
 //! - trunc
+//! - fract
 
 mod float_32;
 mod float_64;
